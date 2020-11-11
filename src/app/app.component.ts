@@ -15,6 +15,7 @@ export class AppComponent implements AfterViewInit {
   private activeCarousel: 'carousel1' | 'carousel2' = 'carousel1';
 
   public ngAfterViewInit() {
+    // @ts-ignore
     this.carousel1.carouselBody.nativeElement.focus();
   }
 
@@ -25,6 +26,7 @@ export class AppComponent implements AfterViewInit {
       case 'ArrowUp':
         if (this.activeCarousel === 'carousel2') {
           this.activeCarousel = 'carousel1';
+          // @ts-ignore
           this.carousel1.carouselBody.nativeElement.focus();
         }
         break;
@@ -32,6 +34,7 @@ export class AppComponent implements AfterViewInit {
       case 'ArrowDown':
         if (this.activeCarousel === 'carousel1') {
           this.activeCarousel = 'carousel2';
+          // @ts-ignore
           this.carousel2.carouselBody.nativeElement.focus();
         }
         break;
