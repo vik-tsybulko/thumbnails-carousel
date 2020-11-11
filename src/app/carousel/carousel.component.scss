@@ -14,7 +14,8 @@
 
     &-track {
       display: flex;
-      transition: transform .3s;
+      transition: transform .3s ease-in-out;
+      padding: 15px;
     }
   }
 }

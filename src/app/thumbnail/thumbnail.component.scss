@@ -7,6 +7,7 @@
   outline: none;
   box-sizing: border-box;
   border: 5px solid transparent;
+  transition: transform .5s ease-in-out;
 
   img {
     width: 100%;
@@ -24,6 +25,7 @@
 
 .thumbnail.active {
   border-color:  #03b3ff;
+  transform: scale(1.05);
   img {
     border-radius: 0;
   }
