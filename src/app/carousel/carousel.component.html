@@ -1,0 +1,23 @@
+<div class="carousel"
+     (appKeydownRight)="nextSlide()"
+     (appKeydownLeft)="prevSlide()"
+>
+  <h3>{{ carouselData.Title }}</h3>
+
+  <div
+    class="carousel-body"
+    #carouselBody
+    [tabIndex]="carouselTabIndex"
+    (focusin)="isActive = true"
+    (focusout)="isActive = false"
+  >
+    <div class="carousel-body-track" [style.transform]="'translateX(' + translateX + 'px)'">
+      <app-thumbnail
+        *ngFor="let thumbnail of carouselData.Thumbnails; index as index"
+        [thumbnail]="thumbnail"
+        [tabIndex]="index"
+        [active]="isActive && index === activeThumbnailIndex"
+      ></app-thumbnail>
+    </div>
+  </div>
+</div>

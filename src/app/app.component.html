@@ -1,7 +1,11 @@
 <div class="app">
-  <app-thumbnail
-    *ngFor="let thumbnail of items; index as index"
-    [thumbnail]="thumbnail"
-    [tabIndex]="index"
-  ></app-thumbnail>
+  <app-carousel
+    #carousel1
+    [carouselData]="carouselData"
+  ></app-carousel>
+  <app-carousel
+    #carousel2
+    [carouselData]="carouselData"
+    [infinity]="true"
+  ></app-carousel>
 </div>

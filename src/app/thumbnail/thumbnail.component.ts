@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input } from '@angular/core';
 
 @Component({
   selector: 'app-thumbnail',
@@ -10,6 +10,8 @@ export class ThumbnailComponent {
   @Input() tabIndex: number;
   @Input() active: boolean;
 
-  constructor() { }
+  constructor(
+    public elementRef: ElementRef
+  ) { }
 
 }
