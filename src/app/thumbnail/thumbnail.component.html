@@ -3,5 +3,16 @@
   [class.active]="active"
   [tabIndex]="tabIndex"
 >
-  <img [src]="thumbnail.LocalizedBackgroundUrl" [alt]="thumbnail.Name" />
+  <img
+      *ngIf="!useFallbackImage"
+      [class.loading]="!imageLoaded && !useFallbackImage"
+      [src]="thumbnail.LocalizedBackgroundUrl"
+      [alt]="thumbnail.Name"
+      (load)="imageLoaded = true"
+      (error)="useFallbackImage = true"
+  />
+  <div
+      *ngIf="useFallbackImage"
+      class="thumbnail-fallback"
+  ></div>
 </div>

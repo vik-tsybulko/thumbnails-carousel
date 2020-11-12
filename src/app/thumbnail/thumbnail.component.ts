@@ -10,6 +10,9 @@ export class ThumbnailComponent {
   @Input() tabIndex: number;
   @Input() active: boolean;
 
+  public useFallbackImage = false;
+  public imageLoaded = false;
+
   constructor(
     public elementRef: ElementRef
   ) { }
